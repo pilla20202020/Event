@@ -19,11 +19,6 @@ Route::get('/', function () {
 
 // Route::get('/birthday', [App\Http\Controllers\HomeController::class, 'birthdayNotification'])->name('birthday');
 
-Route::group(['as' => 'user.','namespace' => 'App\Http\Controllers', 'prefix' => 'user',], function () {
-    Route::get('forget-password', 'User\UserController@forgetPassword')->name('forgetPassword');
-    Route::post('update-password', 'User\UserController@updatePassword')->name('updatePassword');
-
-});
 
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/dashboard','Dashboard\DashboardController@index')->name('dashboard');
